@@ -1,0 +1,2 @@
+module MusicPeopleHelper
+end

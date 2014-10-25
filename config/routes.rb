@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root to: "songs#index"
-
-  get 'songs/index'
+  root to: "music_people#new"
+  # get 'music_people/index'
+  # get 'music_people/create'
+  # get 'music_people/new'
+  resources :music_people
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

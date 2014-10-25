@@ -1,0 +1,53 @@
+<h1>Home Page</h1>
+<%= form_for @music_person do |f| %>
+   <div class="container">
+      <div class="row">
+         <div class="col-xs-4">First Name</div>
+         <div class="col-xs-4"><%= f.text_field :first_name %></div>
+      </div>
+      <div class="row">
+         <div class="col-xs-4">Last Name</div>
+         <div class="col-xs-4"><%= f.text_field :last_name %></div>
+      </div>
+      <div class="row">
+         <div class="col-xs-4">Email Address</div>
+         <div class="col-xs-4"><%= f.text_field :email_address %></div>
+      </div>
+      <div class="row">
+         <div class="col-xs-4">The song you're currently jamming to on repeat</div>
+         <div class="col-xs-4"><%= f.text_field :song_currently_jamming_to %></div>
+      </div>
+      <div class="row">
+         <div class="col-xs-4">No. 1 Favorite Band</div>
+         <div class="col-xs-4"><%= f.text_field :favorite_band_first %></div>
+      </div>
+      <div class="row">
+         <div class="col-xs-4">No. 2 Favorite Band</div>
+         <div class="col-xs-4"><%= f.text_field :favorite_band_second %></div>
+      </div>
+      <div class="row">
+         <div class="col-xs-4">Favorite Genre (what does that even mean?</div>
+         <div class="col-xs-4"><%= f.text_field :favorite_genre %></div>
+      </div>
+      <div class="row">
+         <div class="col-xs-4">City</div>
+         <div class="col-xs-4"><%= f.text_field :city %></div>
+      </div>
+      <div class="row">
+         <div class="col-xs-4">State</div>
+         <div class="col-xs-4"><%= f.text_field :state %></div>
+      </div>
+      <div class="row">
+         <div class="col-xs-4">What do you like to do for fun?</div>
+         <div class="col-xs-4"><%= f.text_field :fun_activity %></div>
+      </div>
+      <div class="row">
+         <div class="col-xs-4">I listen to music the most when I am...</div>
+         <div class="col-xs-4"><%= f.text_field :listen_to_music_most_when %></div>
+      </div>
+
+      <div class="row">
+         <div class="col-xs-4"><%= f.submit "Submit" %></div>
+      </div>
+   </div>
+<% end %>
