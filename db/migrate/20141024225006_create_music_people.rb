@@ -12,6 +12,7 @@ class CreateMusicPeople < ActiveRecord::Migration
       t.string :state
       t.string :fun_activity
       t.string :listen_to_music_most_when
+      t.string :last_song_sent
 
       t.timestamps
     end

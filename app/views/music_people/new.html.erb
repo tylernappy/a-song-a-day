@@ -45,6 +45,10 @@
          <div class="col-xs-4">I listen to music the most when I am...</div>
          <div class="col-xs-4"><%= f.text_field :listen_to_music_most_when %></div>
       </div>
+      <div class="row">
+         <div class="col-xs-4"><%= f.hidden_field :last_song_sent %></div>
+         <div class="col-xs-4"><%= hidden_field_tag DateTime.current, 'none'  %></div>
+      </div>
 
       <div class="row">
          <div class="col-xs-4"><%= f.submit "Submit" %></div>

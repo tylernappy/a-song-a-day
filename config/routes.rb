@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'send_emails/index'
+    post 'send_emails/index'
+    post 'send_emails/send_it'
+  end
+
   root to: "music_people#new"
   # get 'music_people/index'
   # get 'music_people/create'
   # get 'music_people/new'
   resources :music_people
+  devise_for :admins
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -59,4 +66,15 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+
+   # Rails.application.routes.draw do
+  namespace :admin do
+  get 'send_emails/index'
+  end
+
+   #    devise_for :admins, controllers: {
+   #      sessions: 'sessions'
+   #    }
+   #  end
 end

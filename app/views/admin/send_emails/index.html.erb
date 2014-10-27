@@ -1,0 +1,71 @@
+<h1>Admin Page</h1>
+<% @music_people.each do |music_person| %>
+
+      <div class="well">
+         <div class="row">
+            <div class="col-xs-6">
+               <div class="row">
+                  <div class="col-xs-2">Name</div>
+                  <div class="col-xs-4"><%= "#{music_person.first_name} #{music_person.last_name}" %></div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-2">Fav. Bands</div>
+                  <div class="col-xs-4"><%= "#{music_person.favorite_band_first} - #{music_person.favorite_band_second}" %></div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-2">Fav. Song</div>
+                  <div class="col-xs-4"><%= music_person.song_currently_jamming_to %></div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-2">Fav. Genre</div>
+                  <div class="col-xs-4"><%= music_person.favorite_genre %></div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-2">City, State</div>
+                  <div class="col-xs-4"><%= "#{music_person.city}, #{music_person.state}" %></div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-2">Fav. Activity</div>
+                  <div class="col-xs-4"><%= music_person.fun_activity %></div>
+               </div>
+               <div class="row">
+                  <div class="col-xs-2">When Listen</div>
+                  <div class="col-xs-4"><%= music_person.listen_to_music_most_when %></div>
+               </div>
+            </div>
+
+            <!-- Form for sending emails -->
+            <div class="col-xs-6">
+               <%= form_for @send_email, :url => url_for(:controller => 'admin/send_emails', :action => 'send_it') do |f| %>
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-xs-2">Song</div>
+                        <div class="col-xs-4"><%= f.text_field :artist %></div>
+                     </div>
+                     <div class="row">
+                        <div class="col-xs-2">Artist</div>
+                        <div class="col-xs-4"><%= f.text_field :song %></div>
+                     </div>
+                     <div class="row">
+                        <div class="col-xs-2">Link</div>
+                        <div class="col-xs-4"><%= f.text_field :link %></div>
+                     </div>
+                     <div class="row">
+                        <div class="col-xs-2">Optional Note</div>
+                        <div class="col-xs-4"><%= f.text_area :note, size: "20x2" %></div>
+                     </div>
+                     <div class="row">
+                        <div class="col-xs-2"><%= f.hidden_field :to, :value => music_person.id %></div>
+                     </div>
+                     <div class="row">
+                        <div class="col-xs-4 col-xs-offset-2"><%= f.submit "Send" %></div>
+                     </div>
+                  </div>
+               <% end %>
+            </div>
+
+         </div>
+      </div>
+
+
+<% end %>
