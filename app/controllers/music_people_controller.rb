@@ -4,6 +4,7 @@ class MusicPeopleController < ApplicationController
 
   def create
      @music_person = MusicPerson.create(music_person_permit)
+     redirect_to root_path, notice: 'Thanks for signing up!'
   end
 
   def new

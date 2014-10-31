@@ -5,8 +5,8 @@ class Admin::SendEmailsController < ApplicationController
      @search_results = Search.new(MusicPerson, params[:music_person]).run #run search if any
    #   debugger
    #   debugger
-     @music_people = @search_results.select {|music_person| (music_person.updated_at - DateTime.current).abs > 24.hours} #only show people who haven't been sent an email
-   #   @music_people = @search_results.select {|music_person| (music_person.updated_at - DateTime.current).abs > 15.seconds} #only show people who haven't been sent an email
+   #   @music_people = @search_results.select {|music_person| (music_person.updated_at - DateTime.current).abs > 24.hours} #only show people who haven't been sent an email
+     @music_people = @search_results.select {|music_person| (music_person.updated_at - DateTime.current).abs > 15.seconds} #only show people who haven't been sent an email
      @send_email = SendEmail.new
       @search = MusicPerson.new
 
