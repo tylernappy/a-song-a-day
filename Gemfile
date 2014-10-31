@@ -24,6 +24,8 @@ gem 'nokogiri'
 gem 'rubypython'
 gem 'encryptor'
 gem 'echowrap'
+# gem 'algoliasearch-rails'
+gem 'rails-simple-search'
 
 #may take this out
 # gem 'localtunnel'
